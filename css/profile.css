@@ -1,0 +1,439 @@
+.title {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}
+
+.title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+section {
+    margin: 0 50px 50px 50px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 30px;
+    align-items: start;
+}
+
+.about-me {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    grid-column: 1;
+    grid-row: 1;
+    height: 300px;
+}
+
+.about-me h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #3f2e2e;
+    font-size: 1.4rem;
+}
+
+.Music {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    grid-column: 2;
+    grid-row: 1;
+    height: 460px;
+}
+
+.Music h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #3f2e2e;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+audio {
+    display: none;
+}
+
+.play-btn {
+    background-color: #3f2e2e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+    background-color: #524040;
+}
+
+.play-btn.playing {
+    background-color: #e74c3c;
+}
+
+.photos {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    grid-column: 2;
+    grid-row: 2;
+    height: 600px;
+}
+
+.photos h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #3f2e2e;
+    font-size: 1.4rem;
+}
+
+.vid {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    height: 700px;
+}
+
+.vid h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #3f2e2e;
+    font-size: 1.4rem;
+}
+
+.card-music {
+    background-color: #f8f9fa;
+    width: 100%;
+    height: 65px;
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #e9ecef;
+}
+
+.card-music button {
+    background-color: #3f2e2e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-music button:hover {
+    background-color: #524040;
+}
+
+.music-info {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: left;
+    flex-grow: 1;
+    border: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.music-name {
+    font-weight: bold;
+    color: #3f2e2e;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.music-artist {
+    color: #666;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    justify-items: center;
+    align-items: center;
+    height: calc(100% - 60px);
+}
+
+.photo-grid img {
+    object-fit: cover;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.vid-frame {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 500px;
+}
+
+.vid-frame video {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.about-me h3 {
+    font-size: 1.6rem;
+}
+
+.Music h3 {
+    font-size: 1.5rem;
+}
+
+.vid h3 {
+    font-size: 1.4rem;
+}
+
+.photos h3 {
+    font-size: 1.4rem;
+}
+
+.vid-title h4 {
+    margin: 0 0 20px 0;
+    color: #3f2e2e;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .card {
+        gap: 20px;
+    }
+    
+    section {
+        margin: 0 30px 30px 30px;
+    }
+    
+    .photo-grid img {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 25px;
+    }
+    
+    .about-me {
+        grid-column: 1;
+        grid-row: 1;
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .Music {
+        grid-column: 1;
+        grid-row: 2;
+        height: 400px;
+    }
+    
+    .vid {
+        grid-column: 1;
+        grid-row: 3;
+        height: 500px;
+        grid-row: auto;
+    }
+    
+    .photos {
+        grid-column: 1;
+        grid-row: 4;
+        height: 500px;
+    }
+    
+    .photo-grid img {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .vid-frame {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        margin: 0 20px 20px 20px;
+    }
+    
+    .title h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .title {
+        margin-top: 20px;
+    }
+    
+    .about-me,
+    .Music,
+    .vid,
+    .photos {
+        padding: 20px;
+    }
+    
+    .about-me p {
+        font-size: 1.3rem;
+    }
+    
+    .card-music {
+        height: 60px;
+        padding: 10px;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 12px;
+    }
+    
+    .photo-grid img {
+        height: 140px;
+        width: 140px;
+    }
+    
+    .vid-frame {
+        height: 350px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        margin: 0 15px 15px 15px;
+    }
+    
+    .title h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-me,
+    .Music,
+    .vid,
+    .photos {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .about-me h3,
+    .Music h3,
+    .vid h3,
+    .photos h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .about-me p {
+        font-size: 1.1rem;
+    }
+    
+    .card-music {
+        height: 55px;
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .card-music button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .music-info {
+        padding: 6px 10px;
+    }
+    
+    .music-name {
+        font-size: 0.9rem;
+    }
+    
+    .music-artist {
+        font-size: 0.8rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    
+    .photo-grid img {
+        height: 120px;
+        width: 120px;
+    }
+    
+    .vid-title h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .vid-frame {
+        height: 180px;
+        gap: 12px;
+        margin: 5px;
+    }
+    
+    .vid-frame video {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-grid img {
+        height: 180px;
+        width: 180px;
+    }
+    
+    .vid-frame {
+        height: 150px;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html" class="active">My Profile</a></li>
+                <li><a href="activities.html">Activities</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="title">
+        <h2>👤 My Profile</h2>
+    </div>
+    
+    <section>
+        <div class="card">
+            <div class="about-me">
+                <h3>👤 About me</h3>
+                <p style="font-size: 1.5rem;">
+                    My name is Ace, and I'm someone who enjoys two things the most: sleeping and training. 
+                    I love going to the gym or the dojang, especially when there's sparring, because it 
+                    challenges me and helps me improve.
+                </p>
+            </div>
+            
+            <div class="Music">
+                <h3>🎵 My Favorite Music</h3>
+                
+                <div class="card-music">
+                    <button class="play-btn" onclick="playAudio('mockingbird')">▶</button>
+                    <div class="music-info">
+                        <div class="music-name">Mockingbird</div>
+                        <div class="music-artist">Eminem</div>
+                    </div>
+                    <audio id="mockingbird" src="./music/mockingbird.mp3" preload="metadata"></audio>
+                </div>
+                
+                <div class="card-music">
+                    <button class="play-btn" onclick="playAudio('hypnotize')">▶</button>
+                    <div class="music-info">
+                        <div class="music-name">Hypnotize</div>
+                        <div class="music-artist">The Notorious B.I.G.</div>
+                    </div>
+                    <audio id="hypnotize" src="./music/hypnotize.mp3" preload="metadata"></audio>
+                </div>
+                
+                <div class="card-music">
+                    <button class="play-btn" onclick="playAudio('die-with-a-smile')">▶</button>
+                    <div class="music-info">
+                        <div class="music-name">Die With A Smile</div>
+                        <div class="music-artist">Bruno Mars</div>
+                    </div>
+                    <audio id="die-with-a-smile" src="./music/die-with-a-smile.mp3" preload="metadata"></audio>
+                </div>
+                
+                <div class="card-music">
+                    <button class="play-btn" onclick="playAudio('cherry-wine')">▶</button>
+                    <div class="music-info">
+                        <div class="music-name">Cherry Wine</div>
+                        <div class="music-artist">grentperez</div>
+                    </div>
+                    <audio id="cherry-wine" src="./music/cherry-wine.mp3" preload="metadata"></audio>
+                </div>
+                
+                <div class="card-music">
+                    <button class="play-btn" onclick="playAudio('one-of-a-kind')">▶</button>
+                    <div class="music-info">
+                        <div class="music-name">One of a Kind</div>
+                        <div class="music-artist">Manica</div>
+                    </div>
+                    <audio id="one-of-a-kind" src="./music/one-of-a-kind.mp3" preload="metadata"></audio>
+                </div>
+            </div>
+            
+            <div class="vid">
+                <h3>🎬 Videos</h3>
+                <div class="vid-title">
+                    <h4 style="text-align: center;">Taekwando</h4>
+                </div>
+                <div class="vid-frame">
+                    <video src="./video/taekwando.mp4" controls></video>
+                    <video src="./video/taekwando2.mp4" controls></video>
+                </div>
+            </div>
+            
+            <div class="photos">
+                <h3>📸 Photos</h3>
+                <div class="photo-grid">
+                    <img src="./image/1.jpg" alt="Photo 1">
+                    <img src="./image/2.jpg" alt="Photo 2">
+                    <img src="./image/3.jpg" alt="Photo 3">
+                    <img src="./image/4.jpg" alt="Photo 4">
+                    <img src="./image/5.jpg" alt="Photo 5">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let currentAudio = null;
+        let currentButton = null;
+        
+        function playAudio(songId) {
+            const audio = document.getElementById(songId);
+            const button = event.currentTarget;
+            
+            if (currentAudio === audio && !audio.paused) {
+                audio.pause();
+                button.textContent = '▶';
+                return;
+            }
+            
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                if (currentButton) {
+                    currentButton.textContent = '▶';
+                }
+            }
+            
+            audio.play();
+            button.textContent = '⏸';
+            
+            currentAudio = audio;
+            currentButton = button;
+            
+            audio.onended = function() {
+                button.textContent = '▶';
+                currentAudio = null;
+                currentButton = null;
+            };
+            
+            audio.onpause = function() {
+                if (audio.currentTime !== audio.duration) {
+                    button.textContent = '▶';
+                }
+            };
+        }
+        
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.card-music') && currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                if (currentButton) {
+                    currentButton.textContent = '▶';
+                }
+                currentAudio = null;
+                currentButton = null;
+            }
+        });
+    </script>
+</body>
+</html>
